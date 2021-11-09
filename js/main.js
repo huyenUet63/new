@@ -64,3 +64,69 @@ $(document).ready(function(){
         $('.navigation').toggleClass('active')
     })
 });
+
+/*--tab content active--*/
+$(".content .tab_content").hide();
+$(".content .tab_content:first-child").show();
+
+$(".wrapper-item .wrap-tab").click(function(){
+  
+    $(".wrapper-item .wrap-tab").removeClass("active");
+    $(this).addClass("active");
+  
+    var current_tab = $(this).attr("data-list");
+    $(".content .tab_content").hide();
+    $("."+current_tab).show();
+})
+
+
+var ul = document.getElementById("tabs_ul");
+var li_tabs = ul.getElementsByClassName("wrap-tab");
+for (var i = 0; i < li_tabs.length; i++) {
+    li_tabs[i].addEventListener("click", function() {
+        var current = ul.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active", "");
+        this.className += "active";
+    
+        var current_tab_value = this.getAttribute("data-list");
+        document.getElementById(current_tab_value).style.display = "block";
+    });
+}  
+
+/*--slider tab content active--*/
+$(".slider-content .slider_tab_content").hide();
+$(".slider-content .slider_tab_content:first-child").show();
+
+$(".slider-item .slide-tab").click(function(){
+  
+    $(".slider-item .slide-tab").removeClass("active");
+    $(this).addClass("active");
+  
+    var current_tab = $(this).attr("data-list");
+    $(".slider-content .slider_tab_content").hide();
+    $("."+current_tab).show();
+})
+
+
+var ul = document.getElementById("slider_tabs_ul");
+var li_tabs = ul.getElementsByClassName("slide-tab");
+for (var i = 0; i < li_tabs.length; i++) {
+    li_tabs[i].addEventListener("click", function() {
+        var current = ul.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active", "");
+        this.className += "active";
+    
+        var current_tab_value = this.getAttribute("data-list");
+        document.getElementById(current_tab_value).style.display = "flex"; 
+    });
+}  
+
+$(document).ready(function() {
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cs-hidden');
+        } 
+    });  
+});

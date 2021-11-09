@@ -4,7 +4,7 @@ body{
     padding: 0px;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
-    background-color: white;
+    background-color: rgba(0,0,0,0.05);
 }
 *{
     box-sizing: border-box;
@@ -20,6 +20,7 @@ nav{
     width: 100%;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
     z-index: 100;
+    background-color: white;
 }
 
 .information-header{
@@ -75,7 +76,10 @@ nav{
 }
 .menu a:hover,
 .right-menu a:hover,
-.search-cancel:hover{
+.search-cancel:hover, 
+.wrapper .content .tab_content .list-title li a:hover,
+.wrapper .content .tab_content .news .news-content h4 a:hover,
+.slider .slider-content .slider_tab_content .item-details .item-title:hover{
     color: #FF792C;
     transition: all ease 0.3s;
 }
@@ -200,6 +204,238 @@ nav{
     background-color: #ffffff;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.05);
     z-index: 102;
+}
+
+.wrapper{
+    width: 600px;
+    margin: 50px;
+} 
+.wrapper .tabs ul{
+    width: 100%;
+    height: 45px;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+}
+.wrapper .tabs ul li{
+    width: 28%;
+    height: 45px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF792C;
+    font-size: 0.9rem;
+    letter-spacing: -1.2px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+.wrapper .tabs ul li:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+} 
+.wrapper .tabs ul li:first-child{
+    border-top-left-radius: 3px;
+}
+.wrapper .tabs ul li:last-child{
+    border-top-right-radius: 3px;
+}
+.wrapper .content{
+    padding: 20px;
+    background-color: white;
+    /* animation: fade 1s; */
+}
+.wrapper .content .tab_content .list-title {
+    padding: 10px;
+    margin: 0px;
+}
+.wrapper .content .tab_content .list-title li{
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.7px;
+}
+.wrapper .content .tab_content .list-title li a{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* .wrapper .content .tab_content .list-title li a:hover{
+    color: #FF792C;
+    transition: all ease 0.3s;
+} */
+
+.wrapper .content .tab_content .news{
+    display: flex;
+    padding: 10px 0px;
+}
+.wrapper .content .tab_content .news .news-img img{
+    width: 220px;
+}
+.wrapper .content .tab_content .news .news-img:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.wrapper .content .tab_content .news .news-content{
+    padding: 0px 8px 0px 20px;
+}
+.wrapper .content .tab_content .news .news-content h4{
+    margin: 0px;
+}
+.wrapper .content .tab_content .news .news-content h4 a{
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: -1px;
+}
+.wrapper .content .tab_content .news .news-content ul{
+    padding: 0 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    letter-spacing: -1px;
+}
+.wrapper .content .tab_content .news .news-content p{
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.9);
+}
+.wrapper .tabs ul li.active{
+    border-top: 5px solid #FF792C;
+    margin-top: -5px;
+    height: 50px;
+    background: white;
+    color: rgba(0, 0, 0, 0.7);
+    padding-top: 9px;
+}
+
+.slider{
+    width: 93% !important;
+    margin: 50px;
+    background-color: #f8b965;
+    padding-bottom: 30px;
+    /* overflow: hidden;
+    break-inside: avoid-column; */
+} 
+.slider .slider-tabs ul{
+    width: 100%;
+    height: 45px;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+}
+.slider .slider-tabs ul li{
+    width: 15%;
+    height: 45px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 1.2rem;
+    letter-spacing: -1.2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.slider .slider-tabs ul li:hover{
+    color: rgb(250, 240, 240);
+}
+.slider .slider-content{
+    display: flex;
+    padding: 20px;
+    background-color: #f8b965;
+    /* animation: fade 1s; */
+}
+.slider .slider-content .slider_tab_content .item-wrap{
+    width: 220px;
+    background-color: white;
+    padding-bottom: 20px;
+    margin: 0 8px;
+    border-radius: 5px;
+}
+
+.slider .slider-content .slider_tab_content .container .item-wrap .item-img{
+    position: relative;
+}
+
+.slider .slider-content .slider_tab_content .container .item-wrap .item-img img{
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 10px 20px;
+    display: block;
+}
+.slider .slider-content .slider_tab_content .container .item-wrap .item-img .link .fa-link{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem;
+    display: none;
+}
+.slider .slider-content .slider_tab_content .item-wrap .item-img img:hover{
+    transform: scale(0.9);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.item-img .link img:hover .fa-link{
+    display: flex;
+}
+.slider .slider-content .slider_tab_content .item-details .item-title{
+    font-size: 1rem;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: -1px;
+}
+.slider .slider-content .slider_tab_content .item-details .desc{
+    font-size: 0.9rem;
+    height: 145px;
+    padding: 0 5px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: -1px;
+    overflow: hidden;
+}
+.slider .slider-content .slider_tab_content .container{
+    width: 100%;
+    margin: 0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider .slider-content .slider_tab_content .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    columns: 5;
+}
+.slider .slider-content .slider_tab_content #autoWidth{
+    display: flex;
+    justify-content: center !important;
+    margin: 10px auto 0px auto;
+}
+.slider .slider-tabs ul li.active{
+    color: rgb(250, 240, 240);
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .toggle{
